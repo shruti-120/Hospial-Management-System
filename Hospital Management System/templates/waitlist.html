@@ -1,0 +1,5 @@
+<div class="time-slots">
+    {% for time_slot in booked_time_slots %}
+    <button name="time_slot" value="{{ time_slot }}">{{ time_slot }}</button>
+    {% endfor %}
+  </div>

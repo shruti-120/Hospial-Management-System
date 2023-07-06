@@ -1,0 +1,59 @@
+{% extends 'patient_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+  <div class="patient_home">
+    <div class="bookAppointmentBox">
+        <a href="{% url 'book_appointment' %}" class="AppointmentLink">Book Appointment</a>
+    </div>
+    <div class = "myAppointmentBox">
+        <a href="{% url 'patient_appointment' %}", class="AppointmentLink">My Appointments</a>
+    </div>
+    <div class = "feedbackBox">
+      <a href="{% url 'patient_view_feedback' %}" class="AppointmentLink">Feedback</a>
+  </div>
+    <h2>Your Appointments:</h2>
+  <table class="table-container">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Department</th>
+        <th>Doctor</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for appointment in patient_appointments %}
+        <tr>
+          <td>{{ appointment.appointment_date }}</td>
+          <td>{{ appointment.time_slot }}</td>
+          <td>{{ appointment.department }}</td>
+          <td>{{ appointment.doctor }}</td>
+          {% if appointment.waitlisted == True %}
+          <td>waitlisted</td>
+          {% else %}
+          <td>Confirmed</td>
+          {% endif %}
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No appointments found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+    </div>
+</body>
+{% endblock %}
+</html>
+

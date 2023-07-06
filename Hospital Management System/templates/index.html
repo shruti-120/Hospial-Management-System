@@ -1,0 +1,29 @@
+{% extends 'nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    
+</head>
+{% block content %}
+<body class="home">
+    <img class="img" src="{% static 'images/doctor.png' %}">
+    <div class="content">
+        <h1>Hospital Management System</h1>
+        <p> we are committed to providing high-quality healthcare
+             resources to help you make informed decisions about your well-being. 
+             Whether you're looking for medical information, finding a healthcare provider, 
+             or seeking advice on leading a healthy lifestyle, we've got you covered</p>
+             <a href="{% url 'login' %}">Login</a>
+    </div>
+</body>
+{% endblock %}
+</html>
+
+
+

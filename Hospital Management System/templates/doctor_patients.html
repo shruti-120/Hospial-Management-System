@@ -1,0 +1,80 @@
+{% include 'doc_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+  {%block content%}
+  
+<div class="doctorFeedback">
+  
+  <h2>Welcome, {{ doctor.username }}</h2>
+  <canvas id="myChart" width="400" height="100"></canvas> 
+  <h3> Your Patients</h3>
+  <ul class="list">
+    {% for patient in patients %}
+      <li>
+        <strong>Name:</strong> {{ patient.first_name }} {{ patient.last_name }}<br>
+        <strong>Age:</strong> {{ patient.age }}<br>
+        <strong>Gender:</strong> {{ patient.gender }}<br>
+        <strong>Medical History:</strong> {{ patient.medical_history }}<br>
+      </li>
+    {% empty %}
+      <li>No Recent Patients</li>
+    {% endfor %}
+  </ul>
+  </div>
+{%endblock content%}
+  {%block scripts%}
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [{% for gender in gender_list %}'{{gender}}',{%endfor%}],
+        datasets: [{
+          label: '# of users',
+          data: [{% for count in gender_count %}{{count}},{% endfor %}],
+          backgroundColor: [
+            'rgba(255, 99, 132,0.7)',
+            'rgba(54, 162, 235, 0.7)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+
+</script>
+{%endblock scripts%}
+</body>
+</html>

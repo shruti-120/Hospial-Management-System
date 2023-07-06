@@ -1,0 +1,24 @@
+{% extends 'patient_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+  <div class="editAppointment">
+  <h2>Edit Appointment</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Appointment</button>
+</form>
+</div>
+</body>
+{% endblock %}
+</html>

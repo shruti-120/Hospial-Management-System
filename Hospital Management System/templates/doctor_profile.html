@@ -1,0 +1,27 @@
+{% extends 'doc_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+    <div class="doctorProfile">
+    <h2>Doctor Profile</h2>
+    <p>Username: {{ doctor.username }}</p>
+    <p>Name: {{ doctor.first_name }} {{ doctor.last_name }}</p>
+    <p>Email: {{ doctor.email }}</p>
+    <p>Gender: {{ doctor.gender }}</p>
+    <p>Address: {{ doctor.address }}</p>
+    <p>Department: {{ doctor.specialist_in }}</p>
+
+    <a href="{% url 'edit_doctor_profile' %}">Edit Profile</a>
+</div>
+</body>
+{% endblock %}
+</html>

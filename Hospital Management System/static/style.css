@@ -1,0 +1,1168 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+}
+
+body{
+  /* background-image: url('../static/images/background.jpg'); */
+  /* background: linear-gradient(120deg, #eed8a9, #5ec787); */
+  position: relative;
+  /* background-size: 1400px 700px;
+  background-repeat: no-repeat; */
+}
+body::before {
+  content: "";
+  /* background-image: url('../static/images/background.jpg'); */
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7; /* Decrease the opacity level to your desired value */
+  z-index: -1;
+  background-size: 1400px 700px;
+  background-repeat: no-repeat;
+}
+.img{
+  float: right;
+  height: 600px;
+  width: 800px;
+}
+.content {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  margin: 5% 0 5% 5%;
+  text-align: left;
+}
+.content h1{
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+.content p{
+  color: black;
+  padding: 15px 0;
+  line-height: 1.9;
+  text-align: center;
+}
+.content a{
+  border: 1px solid #fff;
+  padding: 10px 25px;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 20px;
+  background: #42af6f;
+  margin-left: 40%;
+}
+.content a:hover{
+  color: #fff;
+  background: #2c2e30;
+}
+.topnav{
+  background-color: #9cccf3;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: right;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  
+}
+
+.topnav a:hover {
+  background-color: #333;
+  color: #fff;
+
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.loginbox{
+  width: 350px;
+  height: 420px;
+  background: rgba(8, 8, 8, 0.7);
+  color: #fff;
+  top: 400%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: 70px 30px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+}
+.loginbox h1{
+  margin: 0;
+  padding: 0px 0 30px;
+  text-align: center;
+  font-size: 32px;
+}
+.loginbox label,p,a{
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.loginbox input{
+  width: 80%;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  padding: 0 0 0 20px;
+}
+.loginbox input[type="text"], input[type="password"]
+{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+.loginbox input[type="submit"]
+{
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #42af6f;
+  font-size: 20px;
+  border-radius: 20px;
+  padding-left: 10px;
+  margin-left: 12px;
+}
+.loginbox input[type="submit"]:hover
+{
+  cursor: pointer;
+  background: #2c2e30;
+  color: #fff;
+}
+.loginbox a{
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 20px;
+  line-height: 20px;
+  color: darkgray;
+}
+.loginbox a:hover{
+  color: #ffc107;
+}
+
+.register .btn-primary {
+  display: block;
+  width: 485%;
+  padding: 10px;
+  text-align: center;
+  color: #fff !important;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: -400px;
+  margin-top: 70px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.register .btn-primary:hover{
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+
+  .register .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  height: 600px;
+}
+
+.register .form-group {
+  margin-bottom: 20px;
+}
+
+.register .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.register .form-group input
+{
+  height: 35px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 0px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  text-indent: 15px;
+  background-color: rgba(255,255,255,0.5);
+  color: #000 ;
+  margin-left: -5px;
+}
+
+.register .note {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.register h2 {
+  margin-top: 0;
+}
+
+.register .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.register .col-md-6 {
+  float: left;
+  width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .col-md-6 {
+      width: 100%;
+      float: none;
+  }
+}
+.topnav1{
+  background-color: #333;
+  overflow: hidden;
+}
+
+.topnav1 h2 {
+  color: #fff;
+  float: left;
+  margin: 0;
+  padding: 10px;
+}
+
+.topnav1 span {
+  color: #fff;
+  float: right;
+  padding: 10px;
+}
+
+.topnav1 a {
+  color: #fff;
+  float: right;
+  padding: 10px;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+.topnav1 input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.topnav1 input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.topnav2{
+  background: #333;
+  overflow: hidden;
+  /* width: 100%; */
+}
+
+.topnav2 a {
+  float: right;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  /* padding: 10px;
+  margin-right: 20px;
+  text-decoration: none; */
+
+}
+
+.topnav2 h3 {
+  float: left;
+  margin: 10px 20px 0 10px;
+  color: #fff;
+}
+.topnav2 a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+      
+.topnav2 a:hover {
+  background-color: #68c8ee;
+  color: #000;
+
+}
+.patient_home .bookAppointmentBox a{
+  width: 350px;
+  height: 100px;
+  background: rgb(96, 202, 235);
+  top: 200%;
+  left: 20%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: 70px 30px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+}
+.patient_home .feedbackBox a{
+  width: 350px;
+  height: 100px;
+  background: rgb(96, 202, 235);
+  top: 577%;
+  left: 20%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: 70px 30px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+}
+.patient_home .myAppointmentBox a{
+  width: 350px;
+  height: 100px;
+  background: rgb(96, 202, 235);
+  top: 350%;
+  left: 20%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: 70px 30px;
+  margin-top: 30px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+}
+.patient_home .bookAppointmentBox a:hover,
+.patient_home .myAppointmentBox a:hover,
+.patient_home .feedbackBox a:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.patient_home .bookAppointmentBox input[type="submit"],
+.patient_home .myAppointmentBox input[type="submit"],
+.patient_home .feedbackBox input[type="submit"]{
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.patient_home .AppointmentLink {
+  font-size: 30px; 
+}
+.patient_home .table-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  float: right;
+}
+
+.patient_home table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.patient_home thead {
+  background-color: #68c8ee;
+}
+
+.patient_home th {
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.patient_home td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.patient_home tr:hover {
+  background-color: #f9f9f9;
+}
+
+.patient_home .edit-appointment-button {
+  text-decoration: none;
+  color: #555;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.patient_home .edit-appointment-button:hover {
+  background-color: #ddd;
+}
+.patient_home h2 {
+  color: #333;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-left: 550px;
+}
+.patient_home a {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}
+
+.patient_home button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 3px;
+  float: right;
+  height: 40px;
+}
+
+.patient_home button a {
+  color: #fff;
+}
+
+.patient_home button:hover {
+  background-color: #45a049;
+}
+
+.patient_home form {
+  display: inline;
+}
+.bookAppointmentContainer{
+  width: 450px;
+  height: 420px;
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  color: #000;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 10%);
+  box-sizing: 70px 30px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+}
+.bookAppointmentContainer h2{
+  margin-left: 17%;
+  margin-bottom: 5%;
+}
+
+.bookAppointmentContainer form {
+  margin-bottom: 20px;
+}
+
+.bookAppointmentContainer .department label,.doctor label,.date label{
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 9px;
+}
+.bookAppointmentContainer .time label{
+  display: inline-flex;
+  margin-left: 9px;
+}
+
+.bookAppointmentContainer select{
+  width: 95%;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 9px;
+}
+.bookAppointmentContainer input[type="date"] {
+  width: 92%;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 9px;
+}
+
+.bookAppointmentContainer button[type="submit"] {
+  background-color: #2196f3;;
+  color: black;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 9px;
+  margin-top: 20px;
+}
+
+.bookAppointmentContainer button[type="submit"]:hover {
+  background-color: #45a049;
+} 
+.pointment  {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  
+}
+
+.patientAppointment .img{
+  float: right;
+  height: 600px;
+  width: 650px;
+}
+.patientAppointment h2 {
+  color: #333;
+
+  margin: 10px 0 20px 30px;
+
+}
+
+
+.patientAppointment button {
+  background-color: #94cde4;
+  color: #000;
+  border: 1px solid #000;
+  padding: 3px 5px;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 3px;
+  float: right;
+  height: 25px;
+  margin-left: 20px;
+  width: 60px;
+  
+}
+
+
+
+.patientAppointment button:hover {
+  background-color: #45a049;
+}
+
+.patientAppointment form {
+  display: inline;
+}
+
+.patientAppointment .table-container {
+width: 80%;
+margin: 10px 0 0 120px;
+background-color: #f9f9f9;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* float: left; */
+}
+
+.patientAppointment table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+
+.patientAppointment thead {
+background-color: #68c8ee;
+}
+
+.patientAppointment th {
+padding: 7px;
+/* padding-left: 2px; */
+font-weight: bold;
+text-align: left;
+border-bottom: 2px solid #ddd;
+}
+
+.patientAppointment td {
+padding: 7px;
+padding-left: 2px;
+border-bottom: 1px solid #ddd;
+}
+
+.patientAppointment tr:hover {
+background-color: #f9f9f9;
+}
+
+.patientAppointment button {
+text-decoration: none;
+color: #000;
+}
+.patientAppointment .edit{
+  text-decoration: none;
+  color: #000;
+  font-weight: normal;
+  font-size: 13px;
+  text-align: center;
+  margin-left: -20px;
+
+  }
+
+/* .patientAppointment .edit-appointment-button:hover {
+background-color: #ddd;
+} */
+.doctorHome .table-container {
+  width: 100%;
+  max-width: 800px;
+  /* margin: 0 auto; */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 300px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  float: right;
+}
+
+.doctorHome table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.doctorHome thead {
+  background-color: #68c8ee;
+}
+
+.doctorHome th {
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.doctorHome td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.doctorHome tr:hover {
+  background-color: #f9f9f9;
+}
+.doctorHome h2 {
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-left: 550px;
+}
+.doctorProfile {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+}
+
+.doctorProfile h2 {
+  margin-bottom: 10px;
+}
+
+.doctorProfile p {
+  margin-bottom: 5px;
+}
+
+.doctorProfile a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color:#2196f3;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.doctorProfile a:hover {
+  background-color: #2c2e30;
+}
+.editDoctorProfile {
+  width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.editDoctorProfile h2 {
+  margin-bottom: 20px;
+  color: #2196f3;
+}
+
+.editDoctorProfile form {
+  margin-top: 20px;
+}
+
+.editDoctorProfile .container {
+  display: flex;
+}
+
+.editDoctorProfile .form {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.editDoctorProfile .form-content {
+  display: flex;
+}
+
+.editDoctorProfile .row {
+  width: 100%;
+  display: flex;
+}
+
+.editDoctorProfile .col-md-6 {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.editDoctorProfile .form-group {
+  margin-bottom: 20px;
+}
+
+.editDoctorProfile label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.editDoctorProfile input[type="text"],
+.editDoctorProfile input[type="password"],
+.editDoctorProfile input[type="email"],
+.editDoctorProfile input[type="tel"],
+.editDoctorProfile input[type="date"] {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid #2196f3;
+  transition: all 0.3s ease;
+}
+
+.editDoctorProfile button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: #fff !important;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #ff9800;
+  transition: all 0.3s ease;
+}
+
+.editDoctorProfile button[type="submit"]:hover {
+  background-color: #ffac33;
+}
+
+@media (max-width: 767px) {
+  .editDoctorProfile {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .editDoctorProfile .container {
+    flex-direction: column;
+  }
+
+  .editDoctorProfile .form {
+    padding-right: 0;
+  }
+
+  .editDoctorProfile .col-md-6 {
+    padding: 0;
+  }
+}
+
+/* doctor_feedback.css */
+
+.doctorFeedback {
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.doctorFeedback h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.doctorFeedback h3 {
+  margin-bottom: 20px;
+}
+.doctorFeedback button {
+  background-color: #4CAF50;
+  padding: 10px 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.doctorFeedback a{
+  text-decoration: none;
+  color: #fff;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.doctorFeedback ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doctorFeedback li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.doctorFeedback strong {
+  font-weight: bold;
+}
+
+.doctorFeedback .no-feedback {
+  color: #999;
+  font-style: italic;
+}
+.editAppointment body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f8ff;
+}
+
+.editAppointment h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.editAppointment form {
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.editAppointment form label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.editAppointment form input[type="text"],
+.editAppointment form select,
+.editAppointment form textarea {
+  width:95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.editAppointment form button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editAppointment form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+.feedbackForm body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.feedbackForm {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedbackForm h3 {
+  color: #333;
+}
+
+.feedbackForm ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.feedbackForm li {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.feedbackForm strong {
+  font-weight: bold;
+}
+
+.feedbackForm button {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedbackForm button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.feedbackForm button:hover {
+  background-color: #45a049;
+}
+.timeSlotContainer{
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.timeSlotContainer h2, label{
+  margin-left: 20px;
+}
+.timeSlotContainer .btnContainer{
+  margin-left: 20px;
+}
+.timeSlotContainer .inp{
+  margin-left: 20px;
+}
+.timeSlotContainer .btn{
+  margin-right: 3px;
+}
+.timeSlotContainer a{
+  text-decoration: none;
+  color: #000;
+  font-size: 12px;
+  font-weight: lighter;
+  padding-left: 2px;
+}
+.time-slot-form {
+  width: 300px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.time-slot-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.time-slots button {
+  padding: 10px 20px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.time-slots button:hover {
+  background-color: #f5d235;
+}
+
+.timeSlotContainer .submit {
+  padding: 10px 20px;
+  background-color: #61d0ec;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 87%;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+/* .doctorList {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */
+.doctor-table {
+  margin-left: 30px;
+  margin-top: 40px;
+  width: 40%;
+  border-collapse: collapse;
+}
+
+.doctors .img{
+  float: right;
+  height: 600px;
+  width: 700px;
+}
+.doctors h1{
+  margin-left: 15%;
+  margin-top: 20px;
+}
+
+.doctor-table th,
+.doctor-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.doctor-table th {
+  background-color: #f2f2f2;
+}
+.departments img{
+  height: 650px;
+  width: 1000px;
+  margin-left: 170px;
+}
+.departments h1{
+  text-align: center;
+}
+.AboutUs img{
+  float: left;
+  height: 600px;
+  width: 730px;
+}
+.AboutUs .content{
+  margin-left: 50%;
+}
+.Contact img{
+  float: left;
+  height: 600px;
+  width: 730px;
+}
+.Contact .content{
+  margin-left: 700px;
+}
+.doctorPatient {
+  background-color: #f1f8ff;
+  border: 1px solid #2196f3;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.doctorPatient h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.doctorPatient h3 {
+  margin-bottom: 20px;
+}
+.doctorPatient button {
+  background-color: #4CAF50;
+  padding: 10px 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.doctorPatient a{
+  text-decoration: none;
+  color: #fff;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.doctorPatient ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doctorPatient li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.doctorPatient strong {
+  font-weight: bold;
+}
+
+.doctorPatient .no-feedback {
+  color: #999;
+  font-style: italic;
+}

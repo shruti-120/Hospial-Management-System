@@ -1,0 +1,92 @@
+{% extends 'nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body class="register">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="role" value="{{ role }}">
+        <div class="container register-form">
+          <div class="form">
+            <div class="note">
+              <h2>Register</h2>
+            </div>
+    
+            <div class="form-content">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="id_first_name">First Name</label>
+                    <p><input type="text" class="form-control" id="id_first_name" name="first_name"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_username">Username</label>
+                    <p><input type="text" class="form-control" id="id_username" name="username"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_email">Email</label>
+                    <p><input type="email" class="form-control" id="id_email" name="email"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_phone_number">Phone Number</label>
+                    <p><input type="tel" class="form-control" id="id_phone_number" name="phone_number"></p>
+                  </div>
+                  {% if role == 'doctor' %}
+                  <div class="form-group">
+                    <label for="id_specialist_in">Specialist In</label>
+                    <p><input type="text" class="form-control" id="id_specialist_in" name="specialist_in"></p>
+                  </div>
+                  {% endif %}
+                  {% if role == 'patient' %}
+                  <div class="form-group">
+                    <label for="id_medical_history">Medical History</label>
+                    <p><input type="text" class="form-control" id="id_medical_history" name="medical_history"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_age">Age</label>
+                    <p><input type="text" class="form-control" id="id_age" name="age"></p>
+                  </div>
+                  {% endif %}
+                  
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="id_last_name">Last Name</label>
+                    <input type="text" class="form-control" id="id_last_name" name="last_name">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_password">Password</label>
+                    <input type="password" class="form-control" id="id_password" name="password">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_date_of_birth">Date of birth</label>
+                    <input type="date" class="form-control" id="id_date_of_birth" name="date_of_birth">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_gender">Gender</label>
+                    <input type="text" class="form-control" id="id_gender" name="gender">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_address">Address</label>
+                    <input type="text" class="form-control" id="id_address" name="address">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <button type="submit" class="btn-primary">Register</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </form>
+</body>
+{% endblock %}
+</html>

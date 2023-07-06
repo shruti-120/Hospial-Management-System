@@ -1,0 +1,85 @@
+{% extends 'doc_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+  <div class="editDoctorProfile">
+  <h2>Edit Doctor Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="role" value="{{ role }}">
+        <div class="container register-form">
+          <div class="form">
+            <div class="note">
+            </div>
+    
+            <div class="form-content">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="id_first_name">First Name</label>
+                    <p>{{ form.first_name }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_username">Username</label>
+                    <p>{{ form.username }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_email">Email</label>
+                    <p>{{ form.email }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_phone_number">Phone Number</label>
+                    <p>{{ form.phone_number }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_specialist_in">Specialist In</label>
+                    <p>{{ form.specialist_in }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_role">Role</label>
+                    <p>{{ form.role }}</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="id_last_name">Last Name</label>
+                    <p>{{ form.last_name }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_password">Password</label>
+                    <p>{{ form.password }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_date_of_birth">Date of birth</label>
+                    <p>{{ form.date_of_birth }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_gender">Gender</label>
+                    <p>{{ form.gender }}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_address">Address</label>
+                    <p>{{ form.address }}</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <button type="submit">Save Changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </form>
+</div>
+</body>
+{% endblock %}
+</html>

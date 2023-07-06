@@ -1,0 +1,39 @@
+{% extends 'doc_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+  <div class="doctorFeedback">
+  <h3>Your Feedbacks:</h3>
+  <ul>
+    {% for feedback in feedbacks %}
+      <li>
+        <strong>Patient: </strong> {{ feedback.patient.first_name }} {{ feedback.patient.last_name }}<br>
+        <strong>Rating: </strong> {{ feedback.rating }}<br>
+        <strong>Comments: </strong> {{ feedback.comment }}<br>
+        <strong>Timestamp: </strong>{{ feedback.timestamp }}<br>
+        <strong>Your Response: </strong>{{ feedback.response }}<br>
+        <form method="post" action="{% url 'doctor_feedback' %}">
+          {% csrf_token %}
+          <input type="hidden" name="feedback_id" value="{{ feedback.id }}">
+          <label for="response">Add Response:</label><br>
+          <textarea id="response" name="response"></textarea><br>
+          <button type="submit">Send Response</button>
+        </form>
+      </li>
+    {% empty %}
+      <li>No feedbacks available.</li>
+    {% endfor %}
+  </ul>
+</div>
+</body>
+{% endblock %}
+</html>

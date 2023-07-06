@@ -1,0 +1,41 @@
+{% extends 'nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    
+</head>
+{% block content %}
+<body class="doctors">
+    <img class="img" src="{% static 'images/doctor2.jpg' %}">
+    <div class="doctorList">
+        <h1> Our Doctors</h1>
+        <table class="doctor-table">
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>department</th>
+                    <th>Average Rating</th>
+                    <th>Given by</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor in doctors %}
+                <tr>
+                    <td>{{ doctor.first_name }} {{ doctor.last_name }}</td>
+                    <td>{{ doctor.specialist_in }}</td>
+                    <td>{{ doctor.average_rating }}</td>
+                    <td>{{ doctor.given_by }} people</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+{% endblock %}
+</html>

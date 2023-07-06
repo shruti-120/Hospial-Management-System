@@ -1,0 +1,43 @@
+{% include 'patient_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+    <div class="timeSlotContainer">
+        <h2>Select Time Slot</h2>
+        <form method="post">
+            {% csrf_token %}
+          
+            <div class="time-slots">
+                {% for time_slot in available_time_slots %}
+                <button name="time_slot" value="{{ time_slot }}">{{ time_slot }}</button>
+                {% endfor %}
+            </div>
+            <div>
+                <input type="hidden" name="patient" value="{{ patient.pk }}">
+            </div>
+            <button class="submit" type="submit">Submit</button><br><br>
+    
+            <div class="booked_time_slots">
+              <label>Is your desired time slot Booked?</label>     <input class="inp" type="checkbox">    Join Waitlist<br><br>
+              <div class="btnContainer">
+              {% for time_slot in booked_time_slots %}
+                <button class="btn" name="time_slot" value="{{ time_slot }}">{{ time_slot }}</button>
+              {% endfor %}
+              </div>
+              </div><br>  
+    
+            <label>Or - </label>     <button><a href="{% url 'book_appointment' %}">choose another date</a></button>
+        </form>
+    </div>
+</body>
+{% endblock %}
+</html>

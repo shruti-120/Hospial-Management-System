@@ -1,0 +1,33 @@
+{% extends 'patient_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+  <div class="doctorFeedback">
+  <h3>Your Feedbacks:</h3>
+  <ul>
+    {% for feedback in feedbacks %}
+      <li>
+        <strong>Doctor: </strong> {{ feedback.doctor.first_name }} {{ feedback.patient.last_name }}<br>
+        <strong>Rating: </strong> {{ feedback.rating }}<br>
+        <strong>Comments: </strong> {{ feedback.comment }}<br>
+        <strong>Timestamp: </strong>{{ feedback.timestamp }}<br>
+        <strong>Response: </strong>{{ feedback.response }}<br>
+      </li>
+    {% empty %}
+      <li>No feedbacks available.</li>
+    {% endfor %}
+  </ul>
+  <button><a href="{% url 'patient_feedback' %}">Give Feedback</a></button>
+</div>
+</body>
+{% endblock %}
+</html>

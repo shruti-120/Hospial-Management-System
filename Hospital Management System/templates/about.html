@@ -1,0 +1,22 @@
+{% extends 'nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    
+</head>
+{% block content %}
+<body class="AboutUs">
+    <img  src="{% static 'images/doctor3.png' %}">
+    <div class="content">
+    <h1>About Us</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula scelerisque nulla, et tincidunt enim varius eget. Phasellus vestibulum dignissim tortor, eu posuere tellus feugiat eu. Mauris eu felis non massa eleifend aliquam nec at mi. Fusce auctor nulla in dapibus dapibus. Duis condimentum, elit et efficitur tempus, ex enim interdum lacus, ut tincidunt dui purus ut metus. Mauris semper odio et fringilla commodo.</p>
+    </div>
+</body>
+{% endblock %}
+</html>

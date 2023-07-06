@@ -1,0 +1,37 @@
+{% extends 'patient_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body>
+    
+    <h1>Give your Feedback</h1>
+    <div class="feedbackForm">
+        <form action="" method="post" class="form-control">
+            {% csrf_token %}
+            <!-- {% for field in form %}
+                <p>
+                    <label>{{ field.label }}</label>
+                    {{ field }}
+                </p>
+            {% endfor %} -->
+            <label><strong>Doctor:</strong></label>
+            {{ form.doctor }}<br><br>
+            <label><strong>Rating:</strong></label>
+            {{ form.rating }}<br><br>
+            <label><strong>Comments:</strong></label>
+            {{ form.comment }}<br><br>
+            <input type="hidden" name="patient" value="{{ patient.pk }}">
+            <input type="submit" value="submit"/>
+        </form>
+    </div>
+</body>
+{% endblock %}
+</html>

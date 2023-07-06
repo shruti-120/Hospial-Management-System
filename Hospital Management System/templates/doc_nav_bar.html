@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="topnav2">
+        <h3>hello, {{request.user}}</h3>
+        <!-- <a class="active" href="../doctor_home_page">Home</a> -->
+        <a class="active" href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'doctor_feedback' %}">Feedbacks</a>
+        <a href="{% url 'doctor_patients' %}">My Patients</a>
+        <!-- <a href="../doc_appointments">My Appointments</a> -->
+        <a href="{% url 'doctor_profile' %}">My Profile</a>
+        <a href="{% url 'doctor_home' %}">Home</a>
+    </div>
+</body>
+{% block content %}
+{% endblock %}
+</html>

@@ -1,0 +1,58 @@
+{% extends 'patient_nav_bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+{% block content %}
+<body class="patientAppointment">
+  <!-- <img class="img" src="{% static 'images/doctor2.jpg' %}"> -->
+<h2>Your Appointments:</h2>
+<table class="table-container">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Department</th>
+      <th>Doctor Name</th>
+      <th>status</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for appointment in patient_appointments %}
+      <tr>
+        <td>{{ appointment.appointment_date }}</td>
+        <td>{{ appointment.time_slot }}</td>
+        <td>{{ appointment.department }}</td>
+        <td>{{ appointment.doctor.first_name}} {{appointment.doctor.last_name}}</td>
+        {% if appointment.waitlisted == True %}
+        <td>waitlisted</td>
+        {% else %}
+        <td>Confirmed</td>
+        {% endif %}
+        <td>
+          <form action="{% url 'patient_appointment' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button><a class="edit" href="{% url 'edit_appointment' appointment.id %}">Edit</a></button>
+            <input type="hidden" name="appointment_id" value="{{ appointment.id }}">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="5">No appointments found.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+{% endblock %}
+</html>
